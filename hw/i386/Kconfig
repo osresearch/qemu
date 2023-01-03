@@ -33,6 +33,9 @@ config PC
     imply VGA_PCI
     imply VIRTIO_VGA
     imply NVDIMM
+    imply BATTERY
+    imply AC_ADAPTER
+    imply BUTTON
     select FDC_ISA
     select I8259
     select I8254

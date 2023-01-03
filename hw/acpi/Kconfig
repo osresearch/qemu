@@ -57,6 +57,18 @@ config ACPI_VIOT
     bool
     depends on ACPI
 
+config BATTERY
+    bool
+    depends on ACPI
+
+config AC_ADAPTER
+    bool
+    depends on ACPI
+
+config BUTTON
+    bool
+    depends on ACPI
+
 config ACPI_HW_REDUCED
     bool
     select ACPI

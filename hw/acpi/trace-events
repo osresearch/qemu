@@ -58,6 +58,21 @@ tco_timer_expired(int timeouts_no, bool strap, bool no_reboot) "timeouts_no=%d n
 tco_io_write(uint64_t addr, uint32_t val) "addr=0x%" PRIx64 " val=0x%" PRIx32
 tco_io_read(uint64_t addr, uint32_t val) "addr=0x%" PRIx64 " val=0x%" PRIx32
 
+# battery.c
+battery_realize(void) "Battery device realize entry"
+battery_get_dynamic_status(uint32_t state, uint32_t rate, uint32_t charge) "Battery read state: 0x%"PRIx32", rate: %"PRIu32", charge: %"PRIu32
+battery_ioport_read_unknown(void) "Battery read unknown"
+
+# acad.c
+acad_realize(void) "AC adapter device realize entry"
+acad_get_dynamic_status(uint8_t state) "AC adapter read state: %"PRIu8
+acad_ioport_read_unknown(void) "AC adapter read unknown"
+
+# button.c
+button_realize(void) "Button device realize entry"
+button_get_dynamic_status(void) "Button read dynamic status entry"
+button_ioport_read_unknown(void) "Button read unknown"
+
 # erst.c
 acpi_erst_reg_write(uint64_t addr, uint64_t val, unsigned size) "addr: 0x%04" PRIx64 " <== 0x%016" PRIx64 " (size: %u)"
 acpi_erst_reg_read(uint64_t addr, uint64_t val, unsigned size) " addr: 0x%04" PRIx64 " ==> 0x%016" PRIx64 " (size: %u)"
